@@ -12,11 +12,15 @@ class Round
     @deck.cards.first
   end
 
-  def record_guess(response)
-    @guesses << Guess.new(response, current_card)
+  def card_swap
     card_swap = @deck.cards.first
     @deck.cards.shift
     @deck.cards << card_swap
+  end
+
+  def record_guess(response)
+    @guesses << Guess.new(response, current_card)
+    card_swap
   end
 
   def number_correct
@@ -30,12 +34,7 @@ class Round
   end
 
   def percent_correct
-    number_correct = 0
-    @guesses.map do |guess|
-      if guess.correct? == true
-        number_correct += 1
-      end
-    end
+    number_correct
     (number_correct * 100) / @guesses.count
   end
 
