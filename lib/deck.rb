@@ -9,21 +9,20 @@ class Deck
     @cards.count
   end
 
-  def merge_sort
-    ordered_cards = []
-    ordered_cards << @cards.first
-    @cards.shift
+def sorting_the_deck
+    ordered_cards = [@cards.shift]
     @cards.each do |card|
-      n = 0
-      if card.value < ordered_cards.first.value
-        ordered_cards.unshift(card)
-      else
-        until card.value > ordered_cards[n].value
-          n += 1
+      ordered_cards.each_with_index do |ordered_card, ordered_card_index|
+        if card.value < ordered_card.value
+          ordered_cards.insert(ordered_card_index, card)
+          break
+        elsif ordered_card_index == ordered_cards.count - 1
+          ordered_cards.push(card)
+          break
         end
-        ordered_cards.insert(n, card)
       end
     end
+    ordered_cards
   end
 
 end
