@@ -1,4 +1,3 @@
-require 'pry'
 class Deck
   attr_reader :cards
 
@@ -7,7 +6,7 @@ class Deck
   end
 
   def count
-    @cards.length
+    @cards.count
   end
 
 def sorting_the_deck
