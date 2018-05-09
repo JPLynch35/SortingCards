@@ -13,7 +13,7 @@ class CardTest < Minitest::Test
   end
 
   def test_card_attributes
-    assert_equal "Ace", @card.value
+    assert_equal 14, @card.value
     assert_equal "Spades", @card.suit
   end
 
