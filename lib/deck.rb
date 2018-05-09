@@ -25,7 +25,7 @@ def sorting_the_deck
     ordered_cards
   end
 
-  def merge_sort(array)
+  def merge_sort(array = @cards)
     return array if array.length == 1
     middle = (array.length / 2.0).ceil
     merge(merge_sort(array[0...middle]), merge_sort(array[middle..-1]))
