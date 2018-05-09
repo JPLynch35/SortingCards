@@ -11,10 +11,11 @@ class GuessTest < Minitest::Test
     assert_instance_of Guess, guess
   end
 
-  def test_card_method
+  def test_guess_attributes
     card = Card.new("10", "Hearts")
     guess = Guess.new("10 of Hearts", card)
-    assert_instance_of Card, guess.card
+    assert_equal "10 of Hearts", guess.response
+    assert_equal 
   end
 
   def test_card
@@ -35,6 +36,7 @@ class GuessTest < Minitest::Test
     assert_equal "2 of Diamonds", guess.response
   end
 
+  # Test also covers value and suit methods
   def test_correct?
     card = Card.new("10", "Hearts")
     guess = Guess.new("10 of Hearts", card)
