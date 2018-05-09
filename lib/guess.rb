@@ -15,11 +15,11 @@ class Guess
   end
 
   def correct?
-    @response.split[0] == @card.value && @response.split[2] == @card.suit
+    value == @card.value && suit == @card.suit
   end
 
   def feedback
-    if @response.split[0] == @card.value && @response.split[2] == @card.suit
+    if correct?
       puts "Correct!"
     else
       puts "Incorrect."

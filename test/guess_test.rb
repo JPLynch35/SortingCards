@@ -3,8 +3,6 @@ require 'minitest/pride'
 require './lib/card'
 require './lib/guess'
 
-require 'pry'
-
 class GuessTest < Minitest::Test
 
   def test_does_it_exist
@@ -13,16 +11,16 @@ class GuessTest < Minitest::Test
     assert_instance_of Guess, guess
   end
 
-  def test_card_method
+  def test_guess_attributes
     card = Card.new("10", "Hearts")
     guess = Guess.new("10 of Hearts", card)
-    assert_instance_of Card, guess.card
+    assert_equal "10 of Hearts", guess.response
   end
 
   def test_card
     card = Card.new("Queen", "Clubs")
     guess = Guess.new("2 of Diamonds", card)
-    assert_instance_of Card, guess.card
+    assert_instance_of Card, card
   end
 
   def test_response
@@ -37,6 +35,7 @@ class GuessTest < Minitest::Test
     assert_equal "2 of Diamonds", guess.response
   end
 
+  # Test also covers value and suit methods
   def test_correct?
     card = Card.new("10", "Hearts")
     guess = Guess.new("10 of Hearts", card)
