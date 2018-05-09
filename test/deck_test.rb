@@ -29,7 +29,7 @@ class DeckTest < Minitest::Test
     assert_equal 3, deck.count
   end
 
-  #Test required by spec
+  # Test required by spec
   def test_sorting_the_deck
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("3", "Clubs")
@@ -38,7 +38,7 @@ class DeckTest < Minitest::Test
     assert_equal [card_2, card_1, card_3], deck.sorting_the_deck
   end
 
-  #Test to ensure small collection didn't just happen to sort correctly
+  # Test to ensure small collection didn't just happen to sort correctly
   def test_sorting_the_deck_large
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("3", "Clubs")
@@ -51,7 +51,7 @@ class DeckTest < Minitest::Test
     assert_equal [card_4, card_2, card_1, card_3, card_7, card_5, card_6], deck.sorting_the_deck
   end
 
-  #Test required by spec
+  # Test required by spec
   def test_merge_sort
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("3", "Clubs")
@@ -60,7 +60,7 @@ class DeckTest < Minitest::Test
     assert_equal [card_2, card_1, card_3], deck.merge_sort
   end
 
-  #Test to ensure small collection didn't just happen to sort correctly
+  # Test to ensure small collection didn't just happen to sort correctly
   def test_merge_sort_large
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("3", "Clubs")
