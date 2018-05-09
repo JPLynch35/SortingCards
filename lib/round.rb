@@ -28,7 +28,6 @@ class Round
   end
 
   def percent_correct
-    number_correct
     (number_correct * 100) / @guesses.length
   end
 
