@@ -9,7 +9,7 @@ class Deck
     @cards.count
   end
 
-def sorting_the_deck
+  def sorting_the_deck
     ordered_cards = [@cards.shift]
     @cards.each do |card|
       ordered_cards.each_with_index do |ordered_card, ordered_card_index|
