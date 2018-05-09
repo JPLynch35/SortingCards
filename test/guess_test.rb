@@ -15,13 +15,12 @@ class GuessTest < Minitest::Test
     card = Card.new("10", "Hearts")
     guess = Guess.new("10 of Hearts", card)
     assert_equal "10 of Hearts", guess.response
-    assert_equal 
   end
 
   def test_card
     card = Card.new("Queen", "Clubs")
     guess = Guess.new("2 of Diamonds", card)
-    assert_instance_of Card, guess.card
+    assert_instance_of Card, card
   end
 
   def test_response
