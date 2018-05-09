@@ -4,17 +4,15 @@ require './lib/card'
 
 class CardTest < Minitest::Test
 
-  def setup
-    @card = Card.new("Ace", "Spades")
-  end
-
   def test_does_it_exist
-    assert_instance_of Card, @card
+    card = Card.new("Ace", "Spades")
+    assert_instance_of Card, card
   end
 
   def test_card_attributes
-    assert_equal "14", @card.value
-    assert_equal "Spades", @card.suit
+    card = Card.new("Ace", "Spades")
+    assert_equal "14", card.value
+    assert_equal "Spades", card.suit
   end
 
 end
