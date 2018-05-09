@@ -34,7 +34,7 @@ class RoundTest < Minitest::Test
 
   def test_guess_count
     @round.record_guess("3 of Hearts")
-    assert_equal 1, @round.guesses.count
+    assert_equal 1, @round.guesses.length
   end
 
   def test_guess_first_feedback
@@ -56,7 +56,7 @@ class RoundTest < Minitest::Test
   def test_guess_count_after_second_guess
     @round.record_guess("3 of Hearts")
     @round.record_guess("Jack of Diamonds")
-    assert_equal 2, @round.guesses.count
+    assert_equal 2, @round.guesses.length
   end
 
   def test_guess_second_feedback
