@@ -6,7 +6,7 @@ require './lib/round'
 
 class RoundTest < Minitest::Test
 
-def test_does_it_exist
+  def test_does_it_exist
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
